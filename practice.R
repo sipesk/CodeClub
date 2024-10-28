@@ -24,3 +24,21 @@ read_tsv(archive_read("write_dir.tar.gz", "ASN00040510.dly"))
 archive("write_dir.tar.gz") %>%
     pull(path) %>%
     map_dfr(., ~read_tsv(archive_read("write_dir.tar.gz", .x)))
+
+
+
+library(tidyverse)
+
+tibble(x = seq(-2, 2, 0.1),
+  round = round(x),
+  trunc = trunc(x),
+  floor = floor(x),
+  ceiling = ceiling(x),
+  integer = as.integer(x),
+  signif = signif(x, digits = 1)) %>%
+print(n=Inf)
+
+x <- 100 * pi
+round(x, digits = 2)
+
+si
