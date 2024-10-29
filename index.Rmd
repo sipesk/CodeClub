@@ -1,0 +1,35 @@
+---
+title: Drought index for world
+author: Pat Schloss
+email:
+youtubevideo: https://www.youtube.com/watch?v=ozta7H7WK58&list=PLmNrK_nkqBpK6iqwN3QeQyXqI6DrcGgIm&index=13
+output: html_document
+github_repo: https://github.com/riffomonas/drought_index
+---
+
+```{r echo = FALSE, message = FALSE }
+library(lubridate)
+
+```
+
+
+
+```{css echo = FALSE}
+.author, .title {
+    display: none;
+}
+.main-container {
+    max-width: 100%;
+}
+body {
+    background-color:black;
+    color: #f5f5f5;
+    font-size=1.2vw;
+}
+
+```
+
+![](visuals/world_drought.png)
+
+Last updated on `r today()` by Katie Sipes  
+From the [CodeClub](`r rmarkdown::metadata$github_repo`) Tutorial by [Pat Schloss](`r rmarkdown::metadata$youtubevideo`)

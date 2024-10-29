@@ -18,7 +18,6 @@ lat_long_prcp <- inner_join(prcp_data, station_data, by = "id") %>%
 end <- format(today(), "%B, %d")
 start <- format(today() - 30, "%B, %d")
 
-
 lat_long_prcp %>%
    group_by(latitude, longitude) %>%
     mutate(z_score = (mean_prcp - mean(mean_prcp))/sd(mean_prcp),
@@ -37,7 +36,7 @@ lat_long_prcp %>%
                         midpoint = 0, 
                         breaks = c(-2, -1, 0, 1, 2), 
                         labels = c("<-2", "-1", "0", "1", ">2")) +
-        theme(plot.background = element_rect( fill = "black", color = "black"),
+    theme(plot.background = element_rect( fill = "black", color = "black"),
             panel.background = element_rect(fill = "black"),
             plot.title = element_text(color = "#f5f5f5", size = 18),
             plot.subtitle = element_text(color = "#f5f5f5"),
@@ -45,7 +44,7 @@ lat_long_prcp %>%
             panel.grid = element_blank(),
             legend.background = element_blank(),
             legend.text = element_text(color = "#f5f5f5"), 
-            legend.position = c(0.2, 0.2),
+            legend.position.inside = c(0.15, 0.2),
             legend.direction = "horizontal",
             legend.key.height = unit(0.25, "cm"), 
             axis.text = element_blank()) +
