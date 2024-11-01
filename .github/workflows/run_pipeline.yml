@@ -4,6 +4,7 @@ on:
   # push:
   schedule:
     - cron: '55 15 * * *'
+    
 jobs:
   Run-Drought-Index-Workflow:
     runs-on: ubuntu-latest
@@ -28,7 +29,6 @@ jobs:
             snakefile: 'Snakefile'
             args: '--cores 1 --use-conda --conda-cleanup-pkgs cache'
             stagein: '' # additional preliminary commands to run (can be multiline)
-            show-disk-usage-on-error: true
       - name: Configure git on runner
         run: |
           git config --local user.email "noreply@github.com"
@@ -39,4 +39,3 @@ jobs:
           git commit -m "New day's rendering
           git push origin main
       - run: echo "🍏 This job's status is ${{ job.status }}."
-          
