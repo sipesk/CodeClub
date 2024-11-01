@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is running Snakemake workflow 🚀
 on: 
   # push:
   schedule:
-    - cron: '55 15 * * *'
+    - cron: '56 15 * * *'
     
 jobs:
   Run-Drought-Index-Workflow:
@@ -24,7 +24,7 @@ jobs:
           pwd
       - name: Snakemake Workflow
         uses: snakemake/snakemake-github-action@v1
-          with:
+        with:
             directory: '.'
             snakefile: 'Snakefile'
             args: '--cores 1 --use-conda --conda-cleanup-pkgs cache'
