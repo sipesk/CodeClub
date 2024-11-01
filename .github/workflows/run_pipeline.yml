@@ -1,8 +1,8 @@
-name: GitHub Actions Demo
+name: Run Drought Index Workflow
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Run-Drought-Index-Workflow:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -20,3 +20,11 @@ jobs:
           pwd
       - run: echo "🍏 This job's status is ${{ job.status }}."
       
+  - name: Snakemake Workflow
+    uses: snakemake/snakemake-github-action@v1
+    with:
+      directory: '.test'
+      snakefile: 'Snakefile'
+      args: '--cores 1 --use-conda --conda-cleanup-pkgs cache'
+      stagein: '' # additional preliminary commands to run (can be multiline)
+      show-disk-usage-on-error: true
