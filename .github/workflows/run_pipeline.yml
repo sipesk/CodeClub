@@ -15,7 +15,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls
+      - name: Get working directory
       - run: |
           pwd
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Get working directory
+      
